@@ -5,6 +5,8 @@
 body
   background-color: shadow
   color: $text-color
+  h3
+    margin: 0
 
 
   //nav
@@ -77,16 +79,95 @@ body
       +position(absolute, null null 10px 50%)
       cursor: pointer
       animation: pendulum 1500ms ease-in-out infinite
-  #about
-    background:
-      image: url("../img/wrinkle.jpg")
-      position: center
-      size: cover
-    text-shadow: 0 0 10px $text-shadow
-    h2
-      text-align: center
-      margin: 50px 0
-    .row
-      line-height: 2em
-      margin-bottom: 50px
-      font-size: 16px
+  .container-fluid
+    padding: 0
+    #about
+      background:
+        image: url("../img/wrinkle.jpg")
+        position: center
+        size: cover
+      text-shadow: 0 0 10px $accentYellow
+      h2
+        text-align: center
+        margin: 50px 0
+      .row
+        line-height: 2em
+        margin-bottom: 50px
+        font-size: 16px
+    #honours
+      div
+        padding: 0
+        +position(relative)
+        .container-fluid
+          +transition
+          overflow: hidden
+          img
+            +position(relative)
+            z-index: -1
+          &:hover
+            box-shadow: 0 0 300px black inset
+            img
+              animation: ken-burns 5s
+              transform: scale(1.1)
+            h3
+              opacity: 1
+
+        h3
+          opacity: 0
+          height: 25px
+          +position(absolute, 50% 0 0 0)
+          +transform(translateY(-50%))
+
+    #subscribe
+      .row
+        padding: 80px 0
+        +position(relative)
+        background: $darkBg
+        +transition
+
+        &:before
+          +position(absolute, 0 null null null)
+          z-index: -1
+          height: 200px
+          width: 100%
+          content: ""
+          background:
+            image: url("../img/books.jpg")
+            position: center
+            size: cover
+        &:hover
+          background: transparent
+        .col-sm-3
+          +position(relative)
+        h3
+          height: 35px
+          padding-top: 10px
+          margin: 0
+          font-weight: 600
+          +position(absolute, null 5px null null)
+        input
+          padding: 5px 20px
+          font:
+            size: 18px
+            weight: bold
+          border: none
+          background: transparentize($accentRed, 0.3)
+        .col-sm-6
+          input
+            width: 100%
+            background: transparent
+            border: none
+            border-bottom: 1px solid $accentYellow
+            +transition
+            &:hover
+              border-bottom: 3px solid $accentYellow
+            &:focus
+              outline: 0
+              background: transparentize($text-shadow, 0.9)
+        .submit
+          +position(relative)
+          input
+            +position(absolute)
+          .bounce
+            animation: bounce 1s
+            transform-origin: center bottom

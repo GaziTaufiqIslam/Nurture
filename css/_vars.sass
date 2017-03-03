@@ -1,11 +1,14 @@
 
 //variables
 $accent: turquoise
+$accentRed: #FB2B3A
+$accentYellow: #FFB52C
 $text-color: white
 $overlay: #CB8D1E
 $text-shadow: #137E73
 $shadow: grey
-
+$mediumBg: transparentize(black, 0.3)
+$darkBg: transparentize(black, 0.9)
 //keyframes
 @keyframes ken-burns
   from
@@ -17,3 +20,40 @@ $shadow: grey
     +transform(translateY(-5px))
   50%
     +transform(translateY(5px))
+//@keyframes bgFlicker
+  0%
+    background: $mediumBg
+    box-shadow: 0 0 300px $darkBg inset
+  10%, 55%, 95%
+    background: $mediumBg
+    box-shadow: 0 0 300px $darkBg inset
+  11%, 56%,  96%
+    background: $darkBg
+    box-shadow: 0 0 300px $darkBg inset
+  98%
+    background: $darkBg
+    box-shadow: 0 0 300px $darkBg inset
+  12%, 57%, 99%
+    background: $mediumBg
+    box-shadow: 0 0 300px $darkBg inset
+  100%
+    background: $mediumBg
+    box-shadow: 0 0 300px $darkBg inset
+@keyframes bounce
+  from, 20%, 53%, 80%, to
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+    transform: translate3d(0,0,0)
+
+
+  40%, 43%
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060)
+    transform: translate3d(0, -30px, 0)
+
+
+  70%
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060)
+    transform: translate3d(0, -15px, 0)
+
+
+  90%
+    transform: translate3d(0,-4px,0)

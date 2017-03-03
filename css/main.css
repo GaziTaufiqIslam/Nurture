@@ -24,9 +24,23 @@
     -ms-transform: translateY(5px);
     -o-transform: translateY(5px);
     transform: translateY(5px); } }
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0); }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0); }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0); }
+  90% {
+    transform: translate3d(0, -4px, 0); } }
 body {
   background-color: shadow;
   color: white; }
+  body h3 {
+    margin: 0; }
   body nav {
     position: fixed;
     z-index: 10;
@@ -103,17 +117,104 @@ body {
       left: 50%;
       cursor: pointer;
       animation: pendulum 1500ms ease-in-out infinite; }
-  body #about {
-    background-image: url("../img/wrinkle.jpg");
-    background-position: center;
-    background-size: cover;
-    text-shadow: 0 0 10px #137E73; }
-    body #about h2 {
-      text-align: center;
-      margin: 50px 0; }
-    body #about .row {
-      line-height: 2em;
-      margin-bottom: 50px;
-      font-size: 16px; }
+  body .container-fluid {
+    padding: 0; }
+    body .container-fluid #about {
+      background-image: url("../img/wrinkle.jpg");
+      background-position: center;
+      background-size: cover;
+      text-shadow: 0 0 10px #FFB52C; }
+      body .container-fluid #about h2 {
+        text-align: center;
+        margin: 50px 0; }
+      body .container-fluid #about .row {
+        line-height: 2em;
+        margin-bottom: 50px;
+        font-size: 16px; }
+    body .container-fluid #honours div {
+      padding: 0;
+      position: relative; }
+      body .container-fluid #honours div .container-fluid {
+        -webkit-transition: all 0.15s ease-out 0s;
+        -moz-transition: all 0.15s ease-out 0s;
+        transition: all 0.15s ease-out 0s;
+        overflow: hidden; }
+        body .container-fluid #honours div .container-fluid img {
+          position: relative;
+          z-index: -1; }
+        body .container-fluid #honours div .container-fluid:hover {
+          box-shadow: 0 0 300px black inset; }
+          body .container-fluid #honours div .container-fluid:hover img {
+            animation: ken-burns 5s;
+            transform: scale(1.1); }
+          body .container-fluid #honours div .container-fluid:hover h3 {
+            opacity: 1; }
+      body .container-fluid #honours div h3 {
+        opacity: 0;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    body .container-fluid #subscribe .row {
+      padding: 80px 0;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1);
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
+      transition: all 0.15s ease-out 0s; }
+      body .container-fluid #subscribe .row:before {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        height: 200px;
+        width: 100%;
+        content: "";
+        background-image: url("../img/books.jpg");
+        background-position: center;
+        background-size: cover; }
+      body .container-fluid #subscribe .row:hover {
+        background: transparent; }
+      body .container-fluid #subscribe .row .col-sm-3 {
+        position: relative; }
+      body .container-fluid #subscribe .row h3 {
+        height: 35px;
+        padding-top: 10px;
+        margin: 0;
+        font-weight: 600;
+        position: absolute;
+        right: 5px; }
+      body .container-fluid #subscribe .row input {
+        padding: 5px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        background: rgba(251, 43, 58, 0.7); }
+      body .container-fluid #subscribe .row .col-sm-6 input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #FFB52C;
+        -webkit-transition: all 0.15s ease-out 0s;
+        -moz-transition: all 0.15s ease-out 0s;
+        transition: all 0.15s ease-out 0s; }
+        body .container-fluid #subscribe .row .col-sm-6 input:hover {
+          border-bottom: 3px solid #FFB52C; }
+        body .container-fluid #subscribe .row .col-sm-6 input:focus {
+          outline: 0;
+          background: rgba(19, 126, 115, 0.1); }
+      body .container-fluid #subscribe .row .submit {
+        position: relative; }
+        body .container-fluid #subscribe .row .submit input {
+          position: absolute; }
+        body .container-fluid #subscribe .row .submit .bounce {
+          animation: bounce 1s;
+          transform-origin: center bottom; }
 
 /*# sourceMappingURL=main.css.map */
