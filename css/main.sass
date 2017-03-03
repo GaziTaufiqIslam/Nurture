@@ -5,30 +5,62 @@
 body
   background-color: shadow
   color: $text-color
+  overflow-x: hidden
   h3
     margin: 0
+  a
+    font:
+      size: 16px
+      weight: 600
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      color: $accentRed
 
 
   //nav
   nav
+    width: 100%
+    background: transparentize($nav-bg, 0.8)
     +position(fixed)
     z-index: 10
     transform: translateY(-100%)
     +transition
     .navbar
-      background: transparent
+      width: 100%
+      background: transparentize($darkAccent, 0.2)
       margin-bottom: 0
       height: 75px
+      border-radius: 0 !important
+      box-shadow: 0px 2px 10px black
+      .logo
+        font-size: 25px
+        margin: 20px
+        color: white
+        float: left
       ul
+        float: right
+        margin: 0
         display: flex
+        flex-wrap: wrap
         li
           list-style-type: none
-          margin: 25px 0px
+          margin: 15px 0px
           a
+            color: transparentize(white, 0)
             font:
               size: 18px
               weight: 600
-            padding: 5px 10px
+            padding: 10px 20px
+            +transition
+            &:hover
+              background: transparentize($darkAccent, 0.1)
+              box-shadow: 0 0 10px $accent
+              color: $accent
+        .active
+          a
+            color: white
+            background: transparentize($accentRed, 0.4)
   .show
     transform: translateY(0%)
 
@@ -58,9 +90,12 @@ body
     .brand
       +position(absolute, null null null 50%)
       +transform(translateX(-50%))
+      h1
+        margin-top: 50px
     .motto
       padding: 180px 50px
     .call-to-action
+      +position(relative)
       a
         text-decoration: none
         background-color: transparentize($accent, 0.5)
@@ -70,26 +105,34 @@ body
           size: 24px
           weight: 600px
         border-radius: 10px
+        +position(absolute)
+        +transform(translateX(-50%))
         +transition
         &:hover
+          +transform(translate(-50%, -3px))
           background-color: transparentize($accent, 0.1)
           box-shadow: 0px 10px 40px black
     .scroll-arrow
       text-align: center
+      font-size: 20px
       +position(absolute, null null 10px 50%)
-      cursor: pointer
       animation: pendulum 1500ms ease-in-out infinite
+      a
+        color: white
   .container-fluid
+    width: 100%
     padding: 0
     #about
+      color: dimgrey
+      padding: 50px 0
       background:
         image: url("../img/wrinkle.jpg")
         position: center
         size: cover
-      text-shadow: 0 0 10px $accentYellow
       h2
         text-align: center
         margin: 50px 0
+        text-shadow: 0 1px 2px black
       .row
         line-height: 2em
         margin-bottom: 50px
@@ -98,6 +141,7 @@ body
       div
         padding: 0
         +position(relative)
+        color: white
         .container-fluid
           +transition
           overflow: hidden
@@ -111,6 +155,7 @@ body
               transform: scale(1.1)
             h3
               opacity: 1
+              text-shadow: 0 0px 20px $accentRed
 
         h3
           opacity: 0
@@ -120,6 +165,7 @@ body
 
     #subscribe
       .row
+        height: 195px
         padding: 80px 0
         +position(relative)
         background: $darkBg
@@ -128,7 +174,7 @@ body
         &:before
           +position(absolute, 0 null null null)
           z-index: -1
-          height: 200px
+          height: 195px
           width: 100%
           content: ""
           background:
@@ -168,6 +214,78 @@ body
           +position(relative)
           input
             +position(absolute)
-          .bounce
-            animation: bounce 1s
-            transform-origin: center bottom
+            +transition
+            &:hover
+              background: transparentize($text-shadow, 0.3)
+              box-shadow: 2px 3px 10px $accentRed
+
+            &:focus
+              outline: 0
+        .bounce
+          animation: bounce 1s
+          transform-origin: center bottom
+  footer
+    background:
+      image: url("../img/wrinkle.jpg")
+      position: center
+      size: cover
+    color: $darkAccent
+    font-weight: 600
+    .row
+      padding: 20px
+      .col-sm-4
+        h2
+          text-shadow: 0 1px 2px black
+          margin-bottom: 20px
+        a
+
+          svg
+            padding: 5px
+            float: left
+            +size(40px)
+            border-radius: 50%
+          p
+            padding: 10px 30px
+            font-weight: 600
+          &:hover
+            box-shadow: 0 0 5px black
+      .col-sm-5
+        +position(relative)
+        text-shadow: 0px 1px  2px black
+        h2
+          margin-bottom: 30px
+        a
+          +position(relative)
+          margin: 0 20px
+          float: left
+          +size(50px)
+          border-radius: 50%
+          background: white
+          box-shadow: 0px 0px 30px black inset
+          &:hover
+            box-shadow: 2px 5px 20px black
+          svg
+            border-radius: 42%
+        #twitter
+
+          fill: dodgerblue
+        #facebook
+          fill: darkslateblue
+        #insta
+          svg
+            border-radius: 0%
+            padding: 10px
+            +size(50px)
+          fill: white
+          background: linear-gradient(blue, red, yellow)
+    .copyright
+      max-width: 900px
+      margin: 0 auto
+      span
+
+        display: block
+        background: $darkAccent
+        width: 100%
+        height: 1px
+      p
+        margin: 10px

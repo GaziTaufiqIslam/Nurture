@@ -1,8 +1,10 @@
 
 //variables
+$nav-bg: #21BDAC
 $accent: turquoise
 $accentRed: #FB2B3A
-$accentYellow: #FFB52C
+$accentYellow: #FAD89B
+$darkAccent: #006A5F
 $text-color: white
 $overlay: #CB8D1E
 $text-shadow: #137E73
@@ -57,3 +59,22 @@ $darkBg: transparentize(black, 0.9)
 
   90%
     transform: translate3d(0,-4px,0)
+@keyframes tada
+  from
+    transform: scale3d(1, 1, 1)
+
+
+  10%, 20%
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)  
+
+
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+
+  40%, 60%, 80%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+
+
+  to
+    transform: scale3d(1, 1, 1)
