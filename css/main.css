@@ -412,7 +412,7 @@ body {
     body footer .copyright {
       max-width: 900px;
       margin: 0 auto; }
-      body footer .copyright span {
+      body footer .copyright span.line {
         display: block;
         background: #006A5F;
         width: 100%;

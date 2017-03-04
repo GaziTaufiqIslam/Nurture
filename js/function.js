@@ -25,7 +25,7 @@ function smoothScroll(duration) {
 }
 
 $(document).ready(function() {
-  smoothScroll(300);
+  smoothScroll(500);
   $("#input-mail").on("keypress", function() {
     $("#submit").addClass("bounce").one('animationend', function() {
       $("#submit").removeClass("bounce");} );
