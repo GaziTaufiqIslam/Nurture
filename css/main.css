@@ -47,10 +47,47 @@
     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
   to {
     transform: scale3d(1, 1, 1); } }
+@keyframes change {
+  0% {
+    background: seagreen; }
+  10% {
+    background: darkseagreen; }
+  30% {
+    background: olive; }
+  50% {
+    background: springgreen; }
+  70% {
+    background: darkgoldenrod; }
+  90% {
+    background: greenyellow; } }
+@keyframes squeeze {
+  0% {
+    height: 5000px;
+    width: 5000px;
+    -webkit-transform: translate(50%, 50%);
+    -moz-transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    -o-transform: translate(50%, 50%);
+    transform: translate(50%, 50%); }
+  100% {
+    height: 0;
+    width: 0;
+    div; } }
+@keyframes rollIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg); }
+  to {
+    opacity: 1;
+    transform: none; } }
 body {
   background-color: shadow;
   color: white;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: "Special Elite", sans-serif;
+  letter-spacing: 3px; }
   body h3 {
     margin: 0; }
   body a {
@@ -60,27 +97,30 @@ body {
     body a:hover {
       text-decoration: none;
       color: #FB2B3A; }
+  body p {
+    font-family: "Catamaran", monospace;
+    letter-spacing: 1px; }
   body nav {
     width: 100%;
-    background: rgba(33, 189, 172, 0.2);
     position: fixed;
     z-index: 10;
-    transform: translateY(-100%);
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s; }
     body nav .navbar {
       width: 100%;
-      background: rgba(0, 106, 95, 0.8);
       margin-bottom: 0;
       height: 75px;
       border-radius: 0 !important;
-      box-shadow: 0px 2px 10px black; }
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
+      transition: all 0.15s ease-out 0s; }
       body nav .navbar .logo {
-        font-size: 25px;
         margin: 20px;
-        color: white;
         float: left; }
+        body nav .navbar .logo svg {
+          height: 35px;
+          width: 35px; }
       body nav .navbar ul {
         float: right;
         margin: 0;
@@ -104,8 +144,11 @@ body {
         body nav .navbar ul .active a {
           color: white;
           background: rgba(251, 43, 58, 0.6); }
+  body .hiddenNav {
+    background: transparent; }
   body .show {
-    transform: translateY(0%); }
+    background: rgba(0, 106, 95, 0.8);
+    box-shadow: 0px 2px 10px black; }
   body header {
     position: relative;
     height: 100vh;
@@ -130,6 +173,8 @@ body {
       transform: scale(1.1);
       animation: ken-burns 10s ease-out; }
     body header .brand {
+      text-align: center;
+      margin-top: 20vh;
       position: absolute;
       left: 50%;
       -webkit-transform: translateX(-50%);
@@ -137,14 +182,26 @@ body {
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%); }
+      body header .brand svg {
+        height: 120px;
+        width: 120px; }
       body header .brand h1 {
-        margin-top: 50px; }
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Rock Salt", cursive;
+        letter-spacing: 10px;
+        color: turquoise; }
+        body header .brand h1 span {
+          color: rgba(251, 43, 58, 0.7); }
     body header .motto {
-      padding: 180px 50px; }
+      position: relative;
+      margin-top: 45vh;
+      padding: 80px 50px; }
     body header .call-to-action {
       position: relative; }
       body header .call-to-action a {
         text-decoration: none;
+        text-transform: uppercase;
         background-color: rgba(64, 224, 208, 0.5);
         padding: 20px 100px;
         color: white;
@@ -185,7 +242,8 @@ body {
       padding: 50px 0;
       background-image: url("../img/wrinkle.jpg");
       background-position: center;
-      background-size: cover; }
+      background-size: cover;
+      background-attachment: fixed; }
       body .container-fluid #about h2 {
         text-align: center;
         margin: 50px 0;
@@ -294,10 +352,19 @@ body {
     background-image: url("../img/wrinkle.jpg");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     color: #006A5F;
     font-weight: 600; }
     body footer .row {
       padding: 20px; }
+      body footer .row .col-sm-3 svg {
+        margin-left: 30px;
+        height: 80px;
+        width: 80px; }
+      body footer .row .col-sm-3 h2 {
+        color: turquoise; }
+        body footer .row .col-sm-3 h2 span {
+          color: rgba(251, 43, 58, 0.7); }
       body footer .row .col-sm-4 h2 {
         text-shadow: 0 1px 2px black;
         margin-bottom: 20px; }
@@ -352,5 +419,170 @@ body {
         height: 1px; }
       body footer .copyright p {
         margin: 10px; }
+  body .player {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    height: 0;
+    width: 0;
+    background-color: rgba(251, 43, 58, 0.2);
+    z-index: 99;
+    animation: squeeze 1.2s ease-out; }
+    body .player .control {
+      padding: 1px;
+      position: relative;
+      background: rgba(64, 224, 208, 0.4);
+      height: 20px;
+      width: 20px;
+      animation: rollIn 2.4s; }
+      body .player .control:hover {
+        background: rgba(64, 224, 208, 0.7);
+        box-shadow: 0 0 10px black; }
+        body .player .control:hover span {
+          color: rgba(251, 43, 58, 0.8); }
+      body .player .control span {
+        position: absolute;
+        font-size: 18px;
+        color: rgba(251, 43, 58, 0.5); }
+  body .paused .glyphicon-play {
+    opacity: 1; }
+  body .paused .glyphicon-pause {
+    opacity: 0; }
+  body .playing .glyphicon-pause {
+    opacity: 1; }
+  body .playing .glyphicon-play {
+    opacity: 0; }
+
+.empowerment {
+  background-image: url("../img/donation.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+  .empowerment .container {
+    margin-top: 40vh;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2); }
+    .empowerment .container .donate, .empowerment .container .sponsor {
+      min-height: 300px;
+      padding: 50px;
+      box-shadow: 0 0 100px black;
+      text-align: center;
+      position: relative; }
+      .empowerment .container .donate .teddy, .empowerment .container .sponsor .teddy {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: -200px;
+        height: 200px;
+        width: 200px;
+        padding: 25px 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 50px turquoise inset; }
+        .empowerment .container .donate .teddy img, .empowerment .container .sponsor .teddy img {
+          height: 150px;
+          width: 150px; }
+      .empowerment .container .donate h2, .empowerment .container .sponsor h2 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-shadow: 0 1px 2px black; }
+      .empowerment .container .donate p, .empowerment .container .sponsor p {
+        text-align: justify;
+        margin-bottom: 50px; }
+      .empowerment .container .donate .money, .empowerment .container .sponsor .money {
+        padding: 15px 150px;
+        background: seagreen;
+        animation: change 40s ease infinite;
+        animation-play-state: running;
+        -webkit-transition: all 0.15s ease-out 0s;
+        -moz-transition: all 0.15s ease-out 0s;
+        transition: all 0.15s ease-out 0s;
+        position: relative; }
+        .empowerment .container .donate .money:hover, .empowerment .container .sponsor .money:hover {
+          animation-play-state: paused;
+          box-shadow: 0 5px 20px black; }
+        .empowerment .container .donate .money svg, .empowerment .container .sponsor .money svg {
+          position: absolute;
+          height: 20px;
+          width: 20px;
+          fill: white; }
+      .empowerment .container .donate .delaymoney, .empowerment .container .sponsor .delaymoney {
+        animation-fill-mode: backwards;
+        animation-delay: 5s; }
+
+#contact {
+  margin-top: -15px;
+  padding-top: 20vh;
+  min-height: 60vh;
+  position: relative;
+  z-index: 1;
+  background-image: url("../img/ravik.png");
+  background-position: center;
+  background-size: contain; }
+  #contact .col-sm-2 {
+    position: relative; }
+    #contact .col-sm-2 h2 {
+      position: absolute;
+      text-shadow: 1px 1px 2px black; }
+    #contact .col-sm-2 svg {
+      fill: turquoise; }
+  #contact form input, #contact form textarea {
+    margin-bottom: 20px;
+    padding: 12px 10px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background: rgba(251, 43, 58, 0.3);
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s; }
+    #contact form input:focus, #contact form textarea:focus {
+      padding: 8px 30px;
+      background: rgba(251, 43, 58, 0.8);
+      border-bottom: 8px solid #FAD89B; }
+  #contact form .col-md-4 {
+    position: relative;
+    background: rgba(251, 43, 58, 0.7);
+    height: 60px;
+    padding: 0 20px; }
+    #contact form .col-md-4 #submit {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      width: 150px;
+      background: transparent; }
+    #contact form .col-md-4:hover {
+      background: rgba(251, 43, 58, 0.9);
+      box-shadow: 0 0 20px black;
+      animation: tada 1s ease; }
+    #contact form .col-md-4 .plane {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      -webkit-transform: translate(0%, -50%);
+      -moz-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+      -o-transform: translate(0%, -50%);
+      transform: translate(0%, -50%);
+      height: 30px;
+      width: 30px; }
+      #contact form .col-md-4 .plane path {
+        fill: white; }
 
 /*# sourceMappingURL=main.css.map */
