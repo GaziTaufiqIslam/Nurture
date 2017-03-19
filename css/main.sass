@@ -23,46 +23,59 @@ body
     letter-spacing: 1px
 
   //nav
-  nav
+  .navbar-default
     width: 100%
     +position(fixed)
     z-index: 10
     +transition
-    .navbar
-      width: 100%
-      margin-bottom: 0
-      height: 75px
-      border-radius: 0 !important
-      +transition
-      .logo
-        svg
-          +size(35px)
-        margin: 20px
+    width: 100%
+    margin-bottom: 0
+    height: 75px
+    border: none
+    border-radius: 0 !important
+    +transition
+    .logo
+      svg
+        +size(35px)
+      margin: 20px
 
-        float: left
-      ul
-        float: right
-        margin: 0
-        display: flex
-        flex-wrap: wrap
-        li
-          list-style-type: none
-          margin: 15px 0px
-          a
-            color: transparentize(white, 0)
-            font:
-              size: 18px
-              weight: 600
-            padding: 10px 20px
-            +transition
-            &:hover
-              background: transparentize($darkAccent, 0.1)
-              box-shadow: 0 0 10px $accent
-              color: $accent
-        .active
-          a
-            color: white
-            background: transparentize($accentRed, 0.4)
+      float: left
+    .navbar-header
+      height: 75px !important
+    .navbar-toggle
+      margin: 21px 15px
+      &:hover
+        background-color: transparentize($accentRed, 0.5) !important
+      &:focus
+        background-color: transparentize($accentRed, 0.3) !important
+      border: none !important
+    .navbar-collapse
+      border: none
+
+    ul
+      //background: transparentize($darkAccent, 0.2)
+      float: right
+      margin: 0
+      display: flex
+      flex-wrap: wrap
+      li
+        list-style-type: none
+        margin: 15px 0px
+        a
+          color: transparentize(white, 0) !important
+          font:
+            size: 18px
+            weight: 600
+          padding: 10px 20px
+          +transition
+          &:hover
+            background: transparentize($darkAccent, 0.1) !important
+            box-shadow: 0 0 10px $accent !important
+            color: $accent
+      .active
+        a
+          color: white !important
+          background: transparentize($accentRed, 0.4) !important
   .hiddenNav
     background: transparent
   .show

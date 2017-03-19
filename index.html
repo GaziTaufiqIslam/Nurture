@@ -9,42 +9,51 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-  <script src="js/function.js" type="text/javascript" ></script>
- <script type="text/javascript" src="js/bootstrap.min.js">
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-</script>
+  <script src="js/function.js" type="text/javascript" ></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
   <!--Fluid nav-->
-  <nav class="nav">
-    <div class="navbar hiddenNav">
+  <nav class="navbar navbar-default hiddenNav">
+    <div class="navstyle hiddenNav">
       <div class="container">
+        <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#triggerHamburger" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="#" class="logo"><?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+        <path style="fill:#F25762;" d="M369.778,47.41c-10.672,10.672-16.992,24.053-18.963,37.924L265.483,0l-94.814,94.815
+        	c13.877,1.972,27.252,8.292,37.924,18.964c26.183,26.182,26.183,68.633,0,94.817c-26.183,26.181-68.632,26.182-94.814-0.001
+        	c-10.675-10.672-16.992-24.05-18.965-37.926L0,265.481l85.335,85.335c-13.877,1.972-27.253,8.292-37.927,18.964
+        	c-26.181,26.181-26.182,68.633,0.001,94.814c26.183,26.182,68.633,26.182,94.814,0.001c10.673-10.673,16.993-24.05,18.965-37.924
+        	l85.332,85.33l94.814-94.812c-13.877-1.971-27.251-8.289-37.926-18.964c-26.183-26.183-26.182-68.632,0-94.815
+        	c26.183-26.181,68.633-26.183,94.814,0c10.673,10.675,16.992,24.05,18.964,37.924l94.814-94.814l-85.332-85.331
+        	c13.874-1.972,27.251-8.292,37.924-18.965c26.182-26.182,26.183-68.633,0-94.815S395.961,21.226,369.778,47.41z"/>
+        <path style="fill:#DE434E;" d="M341.334,417.188c-13.877-1.971-27.251-8.289-37.926-18.964c-26.183-26.183-26.182-68.632,0-94.815
+        	c26.183-26.181,68.633-26.183,94.814,0c10.673,10.675,16.992,24.05,18.964,37.924L512,246.519l-85.331-85.33
+        	c13.874-1.972,27.251-8.292,37.924-18.965c26.182-26.182,26.183-68.633,0-94.815L47.408,464.593
+        	c26.182,26.182,68.632,26.182,94.814,0.001c10.673-10.673,16.993-24.05,18.965-37.924L246.52,512L341.334,417.188z"/>
+        </svg></a>
+            </div>
 
 
-      <a href="#" class="logo"><?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
-<path style="fill:#F25762;" d="M369.778,47.41c-10.672,10.672-16.992,24.053-18.963,37.924L265.483,0l-94.814,94.815
-	c13.877,1.972,27.252,8.292,37.924,18.964c26.183,26.182,26.183,68.633,0,94.817c-26.183,26.181-68.632,26.182-94.814-0.001
-	c-10.675-10.672-16.992-24.05-18.965-37.926L0,265.481l85.335,85.335c-13.877,1.972-27.253,8.292-37.927,18.964
-	c-26.181,26.181-26.182,68.633,0.001,94.814c26.183,26.182,68.633,26.182,94.814,0.001c10.673-10.673,16.993-24.05,18.965-37.924
-	l85.332,85.33l94.814-94.812c-13.877-1.971-27.251-8.289-37.926-18.964c-26.183-26.183-26.182-68.632,0-94.815
-	c26.183-26.181,68.633-26.183,94.814,0c10.673,10.675,16.992,24.05,18.964,37.924l94.814-94.814l-85.332-85.331
-	c13.874-1.972,27.251-8.292,37.924-18.965c26.182-26.182,26.183-68.633,0-94.815S395.961,21.226,369.778,47.41z"/>
-<path style="fill:#DE434E;" d="M341.334,417.188c-13.877-1.971-27.251-8.289-37.926-18.964c-26.183-26.183-26.182-68.632,0-94.815
-	c26.183-26.181,68.633-26.183,94.814,0c10.673,10.675,16.992,24.05,18.964,37.924L512,246.519l-85.331-85.33
-	c13.874-1.972,27.251-8.292,37.924-18.965c26.182-26.182,26.183-68.633,0-94.815L47.408,464.593
-	c26.182,26.182,68.632,26.182,94.814,0.001c10.673-10.673,16.993-24.05,18.965-37.924L246.52,512L341.334,417.188z"/>
-</svg></a>
-      <ul class="nav">
-        <li><a  href="#home">Home</a></li>
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#honours">Journals</a></li>
-        <li><a href="empower.html"><u style="text-transform: uppercase;">Get Involved</u></a></li>
-        <li><a href="Gallery/index4.html">Gallery</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="triggerHamburger">
+        <ul class="nav navbar-nav">
+          <li><a  href="#home">Home</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#honours">Journals</a></li>
+          <li><a href="empower.html"><u style="text-transform: uppercase;">Get Involved</u></a></li>
+          <li><a href="Gallery/index4.html">Gallery</a></li>
+        </ul>
+      </div>
     </div>
     </div>
   </nav>
@@ -282,7 +291,7 @@
 </div></div>
       </footer>
 
-    </div>
+
     <div class="player playing">
       <div class="control">
         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>

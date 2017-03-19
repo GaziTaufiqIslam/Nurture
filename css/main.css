@@ -100,50 +100,61 @@ body {
   body p {
     font-family: "Catamaran", monospace;
     letter-spacing: 1px; }
-  body nav {
+  body .navbar-default {
     width: 100%;
     position: fixed;
     z-index: 10;
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+    width: 100%;
+    margin-bottom: 0;
+    height: 75px;
+    border: none;
+    border-radius: 0 !important;
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s; }
-    body nav .navbar {
-      width: 100%;
-      margin-bottom: 0;
-      height: 75px;
-      border-radius: 0 !important;
-      -webkit-transition: all 0.15s ease-out 0s;
-      -moz-transition: all 0.15s ease-out 0s;
-      transition: all 0.15s ease-out 0s; }
-      body nav .navbar .logo {
-        margin: 20px;
-        float: left; }
-        body nav .navbar .logo svg {
-          height: 35px;
-          width: 35px; }
-      body nav .navbar ul {
-        float: right;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap; }
-        body nav .navbar ul li {
-          list-style-type: none;
-          margin: 15px 0px; }
-          body nav .navbar ul li a {
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 10px 20px;
-            -webkit-transition: all 0.15s ease-out 0s;
-            -moz-transition: all 0.15s ease-out 0s;
-            transition: all 0.15s ease-out 0s; }
-            body nav .navbar ul li a:hover {
-              background: rgba(0, 106, 95, 0.9);
-              box-shadow: 0 0 10px turquoise;
-              color: turquoise; }
-        body nav .navbar ul .active a {
-          color: white;
-          background: rgba(251, 43, 58, 0.6); }
+    body .navbar-default .logo {
+      margin: 20px;
+      float: left; }
+      body .navbar-default .logo svg {
+        height: 35px;
+        width: 35px; }
+    body .navbar-default .navbar-header {
+      height: 75px !important; }
+    body .navbar-default .navbar-toggle {
+      margin: 21px 15px;
+      border: none !important; }
+      body .navbar-default .navbar-toggle:hover {
+        background-color: rgba(251, 43, 58, 0.5) !important; }
+      body .navbar-default .navbar-toggle:focus {
+        background-color: rgba(251, 43, 58, 0.7) !important; }
+    body .navbar-default .navbar-collapse {
+      border: none; }
+    body .navbar-default ul {
+      float: right;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap; }
+      body .navbar-default ul li {
+        list-style-type: none;
+        margin: 15px 0px; }
+        body .navbar-default ul li a {
+          color: white !important;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 10px 20px;
+          -webkit-transition: all 0.15s ease-out 0s;
+          -moz-transition: all 0.15s ease-out 0s;
+          transition: all 0.15s ease-out 0s; }
+          body .navbar-default ul li a:hover {
+            background: rgba(0, 106, 95, 0.9) !important;
+            box-shadow: 0 0 10px turquoise !important;
+            color: turquoise; }
+      body .navbar-default ul .active a {
+        color: white !important;
+        background: rgba(251, 43, 58, 0.6) !important; }
   body .hiddenNav {
     background: transparent; }
   body .show {

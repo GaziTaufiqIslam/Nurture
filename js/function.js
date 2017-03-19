@@ -1,16 +1,4 @@
-$(window).scroll(function () {
-  var wScroll= $(this).scrollTop();
-  var winH = $(window).height();
 
-  if(wScroll > winH) {
-    $('.navbar').addClass('show');
-    $('.navbar').removeClass('hiddenNav');
-  }
-  else {
-    $('.navbar').removeClass('show');
-    $('.navbar').addClass('hiddenNav');
-  }
-});
 
 function smoothScroll(duration) {
   $('a[href^="#"]').on('click', function(event){
@@ -26,6 +14,39 @@ function smoothScroll(duration) {
 
 $(document).ready(function() {
   smoothScroll(500);
+
+  var checkScroll= 0;
+  $(window).scroll(function () {
+    var wScroll= $(this).scrollTop();
+    var winH = $(window).height();
+
+
+    if(wScroll > winH) {
+      checkScroll=1;
+      $('.navbar').addClass('show');
+      $('.navbar').removeClass('hiddenNav');
+    }
+    else {
+      checkScroll=0;
+      $('.navbar').removeClass('show');
+      $('.navbar').addClass('hiddenNav');
+    }
+  });
+
+$(".navbar-toggle").on("click", function() {
+if(checkScroll>0)
+  {
+
+    $(".navbar-collapse").css({"background":"rgba(0, 106, 95, 0.8)"});
+  }
+
+  else {
+    $(".navbar-collapse").css({"background":"rgba(0, 0, 0, 0.0)"});
+
+  }
+  });
+
+
   $("#input-mail").on("keypress", function() {
     $("#submit").addClass("bounce").one('animationend', function() {
       $("#submit").removeClass("bounce");} );
