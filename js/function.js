@@ -34,16 +34,8 @@ $(document).ready(function() {
   });
 
 $(".navbar-toggle").on("click", function() {
-if(checkScroll>0)
-  {
-
     $(".navbar-collapse").css({"background":"rgba(0, 106, 95, 0.8)"});
-  }
-
-  else {
-    $(".navbar-collapse").css({"background":"rgba(0, 0, 0, 0.0)"});
-
-  }
+    //$(".navbar-collapse").css({"background":"rgba(0, 0, 0, 0.0)"});
   });
 
 
